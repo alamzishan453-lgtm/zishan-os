@@ -1,5 +1,7 @@
-import Image from "next/image";
+"use client";
 
+import { useEffect, useState } from "react";
+import Image from "next/image";
 export default function Home() {
 return(
 <main className="relative min-h-screen overflow-hidden bg-black text-white">
