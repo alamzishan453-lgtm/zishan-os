@@ -326,7 +326,14 @@ Feel free to contact me for website development, Excel work or any project.
 <a href="https://wa.me/qr/KFOPAJYRNKISN1" target="_blank" rel="noopener noreferrer" className="block hover:text-red-400 transition">
 💬 WhatsApp
 </a>
-
+<a
+  href="https://pin.it/4hYZiviV2"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center justify-center gap-2 hover:text-red-400 transition"
+>
+  📌 <span>Pinterest</span>
+</a>
 </div>
 
 </div>
