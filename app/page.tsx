@@ -5,8 +5,18 @@ import Image from "next/image";
 
 export default function Home() {
 
-  const [showPopup, setShowPopup] = useState(true);
-  return (
+  const [showPopup, setShowPopup] = useState(false);
+ useEffect(() => {
+  if (typeof window === "undefined") return;
+
+  const popupSeen = sessionStorage.getItem("popupSeen");
+
+  if (!popupSeen && window.innerWidth < 768) {
+    setShowPopup(true);
+    sessionStorage.setItem("popupSeen", "true");
+  }
+}, []);
+return (
     <main className="relative min-h-screen overflow-hidden bg-black text-white">
 
       {showPopup && (
@@ -21,31 +31,32 @@ export default function Home() {
               For the best experience, please enable Desktop Mode.
             </p>
 
-            <button
-              onClick={() => setShowPopup(false)}
-              className="bg-red-500 text-white px-6 py-3 rounded-xl hover:bg-red-600"
-            >
-              Continue
-            </button>
+           <button
+  onClick={() => setShowPopup(false)}
+  className="bg-red-500 text-white px-6 py-3 rounded-xl hover:bg-red-600"
+>
+  Desktop Mode
+</button>
 
           </div>
         </div>
       )}
+<div className="absolute inset-0">
+  <Image
+    src="/profile.png"
+    alt="Background"
+    fill
+    priority
+    className="object-cover object-top md:object-center opacity-70 md:opacity-40"
+  />
 
-      <div className="absolute inset-0">
-<Image
-  src="/profile.png"
-  alt="Background"
-  fill
-  priority
- className="object-cover object-top md:object-center opacity-70 md:opacity-40"
-/>
-bg-gradient-to-r from-black/40 via-black/20 to-red-900/20 md:from-black md:via-black/80 md:to-red-900/40
-<div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
+  <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-red-900/20 md:from-black md:via-black/80 md:to-red-900/40"></div>
+
+  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
 </div>
 
 <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/20 border-b border-white/10">
-<div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
+  <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
 
 <Image
   src="/logo.png"
