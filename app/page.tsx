@@ -6,13 +6,13 @@ return(
 
 <div className="absolute inset-0">
 <Image
-src="/profile.png"
-alt="Background"
-fill
-priority
-className="object-cover object-center opacity-40"
+  src="/profile.png"
+  alt="Background"
+  fill
+  priority
+ className="object-cover object-top md:object-center opacity-70 md:opacity-40"
 />
-<div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-red-900/40"></div>
+bg-gradient-to-r from-black/40 via-black/20 to-red-900/20 md:from-black md:via-black/80 md:to-red-900/40
 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
 </div>
 
@@ -44,47 +44,60 @@ className="object-cover object-center opacity-40"
 
 <section
   id="home"
-  className="relative z-10 max-w-7xl mx-auto min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-12 pt-24"
+  className="relative z-10 max-w-7xl mx-auto min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-12 pt-28 gap-10"
 >
+  {/* Left Content */}
+  <div className="max-w-2xl text-center md:text-left order-2 md:order-1">
 
-<div className="max-w-2xl">
+    <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight">
+      Zishan Alam
+    </h1>
 
-<h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
-Zishan Alam
-</h1>
+    <p className="mt-5 text-lg sm:text-xl md:text-2xl text-red-400">
+      Website Builder • MS Excel • Exam Sheet Designer
+    </p>
 
-<p className="mt-5 text-xl md:text-2xl text-red-400">
-Website Builder • MS Excel • Exam Sheet Designer
-</p><p className="mt-8 text-lg text-gray-300 leading-8">
-Welcome to my official portfolio website.
-I build modern websites, create professional Excel solutions,
-design exam sheets and help businesses grow online.
-</p>
+    <p className="mt-6 text-base md:text-lg text-gray-300 leading-8">
+      Welcome to my official portfolio website.
+      I build modern websites, create professional Excel solutions,
+      design exam sheets and help businesses grow online.
+    </p>
 
-<div className="mt-10 flex flex-col sm:flex-row gap-5">
+    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
 
-<a href="#contact" className="px-8 py-4 rounded-xl bg-red-500 hover:bg-red-600 transition font-bold inline-block">
-Contact Me
-</a>
+      <a
+        href="#contact"
+        className="px-8 py-4 rounded-xl bg-red-500 hover:bg-red-600 transition font-bold"
+      >
+        Contact Me
+      </a>
 
-<a href="#projects" className="px-8 py-4 rounded-xl border border-red-500 hover:bg-red-500 transition inline-block">
-View Projects
-</a>
+      <a
+        href="#projects"
+        className="px-8 py-4 rounded-xl border border-red-500 hover:bg-red-500 transition"
+      >
+        View Projects
+      </a>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
-<div className="hidden md:block w-[420px]">
-<Image
-src="/profile.png"
-alt="Profile"
-width={420}
-height={620}
-priority
-className="rounded-3xl shadow-2xl border border-red-500"
- />
-</div></section>
+  {/* Right Image */}
+  <div className="order-1 md:order-2 flex justify-center">
+
+    <Image
+      src="/profile.png"
+      alt="Profile"
+      width={420}
+      height={620}
+      priority
+      className="w-64 sm:w-72 md:w-[420px] rounded-3xl border-2 border-red-500 shadow-2xl"
+    />
+
+  </div>
+
+</section>
 <section id="about" className="relative z-10 py-24 bg-black/40 backdrop-blur-sm">
 <div className="max-w-6xl mx-auto px-6">
 <h2 className="text-4xl font-bold text-red-500 mb-10">About Me</h2>
