@@ -1,12 +1,38 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-export default function Home() {
-return(
-<main className="relative min-h-screen overflow-hidden bg-black text-white">
 
-<div className="absolute inset-0">
+export default function Home() {
+
+  const [showPopup, setShowPopup] = useState(true);
+  return (
+    <main className="relative min-h-screen overflow-hidden bg-black text-white">
+
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center px-6">
+          <div className="bg-white text-black rounded-3xl p-8 max-w-sm text-center shadow-2xl">
+
+            <h2 className="text-2xl font-bold mb-4">
+              💻 Best Experience
+            </h2>
+
+            <p className="text-gray-700 mb-6">
+              For the best experience, please enable Desktop Mode.
+            </p>
+
+            <button
+              onClick={() => setShowPopup(false)}
+              className="bg-red-500 text-white px-6 py-3 rounded-xl hover:bg-red-600"
+            >
+              Continue
+            </button>
+
+          </div>
+        </div>
+      )}
+
+      <div className="absolute inset-0">
 <Image
   src="/profile.png"
   alt="Background"
