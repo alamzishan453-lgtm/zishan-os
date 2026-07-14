@@ -42,7 +42,10 @@ className="object-cover object-center opacity-40"
 </div>
 </nav>
 
-<section id="home" className="relative z-10 max-w-7xl mx-auto min-h-screen flex items-center px-6 md:px-12">
+<section
+  id="home"
+  className="relative z-10 max-w-7xl mx-auto min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-12 pt-24"
+>
 
 <div className="max-w-2xl">
 
